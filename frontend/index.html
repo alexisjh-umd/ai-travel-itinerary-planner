@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dynamic Travel Itinerary Planner</title>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>Dynamic Travel Itinerary Planner</h1>
+    <p class="sub">Generate, explain, and re-plan trips in real time.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Plan a Trip</h2>
+      <form id="plan-form">
+        <div class="grid">
+          <label>Origin <input name="origin" required placeholder="IAD"/></label>
+          <label>Destination <input name="destination" required placeholder="SFO"/></label>
+          <label>Start Date <input name="start_date" type="date" required/></label>
+          <label>End Date <input name="end_date" type="date" required/></label>
+          <label>Budget ($) <input name="budget" type="number" min="100" value="1500" required/></label>
+          <label>Party Size <input name="party_size" type="number" min="1" value="1" required/></label>
+          <label>Interests (comma) <input name="interests" placeholder="food, museums"/></label>
+          <label>Mobility Needs <input name="mobility_needs" placeholder="wheelchair"/></label>
+        </div>
+        <button type="submit">Generate Itinerary</button>
+      </form>
+      <pre id="plan-output" class="output"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Explain / Modify</h2>
+      <form id="explain-form">
+        <label>Request <input name="request" placeholder="Reduce the budget by 15%" required/></label>
+        <button type="submit">Explain Trade-offs</button>
+      </form>
+      <pre id="explain-output" class="output"></pre>
+    </section>
+
+    <section class="card">
+      <h2>Replan (Signals)</h2>
+      <form id="replan-form">
+        <label>Signal Type
+          <select name="type">
+            <option>weather_alert</option>
+            <option>closure_notice</option>
+            <option>transit_delay</option>
+          </select>
+        </label>
+        <label>Message <input name="message" placeholder="Heavy rain expected"/></label>
+        <button type="submit">Apply Signal</button>
+      </form>
+      <pre id="replan-output" class="output"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>Backend: <code>http://localhost:8000</code></p>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

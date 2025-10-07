@@ -1,11 +1,11 @@
-# Dynamic Travel Itinerary Planner (Starter Kit)
+# Dynamic Travel Itinerary Planner
 
 An end-to-end starter repo for a **Generative AI–powered, adaptive travel itinerary planner**.  
 It ships with a **FastAPI** backend, a tiny vanilla JS frontend, and **Docker** support—perfect for development in VS Code and pushing to GitHub.
 
 ---
 
-## ✨ What’s Included
+## What our team has included
 
 - **FastAPI backend** with clean architecture:
   - `PlannerService` to compose Day-by-Day itineraries
@@ -21,7 +21,7 @@ It ships with a **FastAPI** backend, a tiny vanilla JS frontend, and **Docker** 
 
 ---
 
-## 🧭 Project Structure
+## Project Structure
 
 ```
 dynamic-travel-itinerary-planner/
@@ -57,7 +57,7 @@ dynamic-travel-itinerary-planner/
 
 ---
 
-## 🚀 Quickstart (Local)
+## Quickstart (Local)
 
 **Prereqs:** Python 3.10+, Node (optional), Docker (optional).
 
@@ -86,7 +86,7 @@ docker compose up --build
 
 ---
 
-## 🔌 Plugging In Real Providers (APIs)
+## Plugging In Real Providers (APIs)
 
 Each provider in `backend/app/services/data_providers/` is an adapter with a simple interface and a mocked `fetch_*` method.  
 Replace the mocks with real API calls (e.g., Skyscanner, Amadeus, Yelp, TripAdvisor, Ticketmaster, Rome2Rio, OpenWeather).
@@ -103,7 +103,7 @@ Add your API keys to `.env` and read them in `config.py`.
 
 ---
 
-## 🧠 LLM Integration
+## LLM Integration
 
 `LLMService` exposes `plan_itinerary_text()` and `explain_tradeoffs()` with a **rule-based fallback** that works offline.  
 To use a provider (e.g., OpenAI):
@@ -114,21 +114,21 @@ To use a provider (e.g., OpenAI):
 
 ---
 
-## 🔄 Dynamic Re-Planning
+##  Dynamic Re-Planning
 
 `ReplannerService` ingests **signals** (weather changes, closures, transit delays) and returns **diffs** with rationale.  
 Wire it to a scheduler/webhook (e.g., run every 15 minutes) and call `replan()` with the latest signals.
 
 ---
 
-## 🧪 Tests
+## Tests
 ```bash
 pytest -q
 ```
 
 ---
 
-## 🧰 VS Code Tips
+## VS Code Tips
 
 - Install extensions: **Python**, **Pylance**, **Black**, **isort**, **EditorConfig**, **Thunder Client** (or use curl)  
 - Debug config: run `uvicorn app.main:app --reload`
@@ -136,7 +136,7 @@ pytest -q
 
 ---
 
-## 🛡️ Security & Privacy Notes
+## Security & Privacy Notes
 
 - Store API keys in `.env` (never commit real secrets).
 - Rate-limit external calls. Cache responses where possible.
@@ -145,7 +145,7 @@ pytest -q
 
 ---
 
-## 🗺️ Roadmap Ideas
+## Roadmap Ideas
 
 - OAuth login + per-user profiles and preferences
 - Calendar export (iCal) and email/SMS notifications
@@ -155,4 +155,3 @@ pytest -q
 
 ---
 
-**Happy building!** ✈️🧳
